@@ -14,7 +14,7 @@ function App() {
           <h1 >Teste suas habilidaes!</h1>
         </header>
         <p>
-          Teste os seus conhecimentos sobre o universo Harry Potter e divirta-se.
+          Teste os seus conhecimentos sobre o universo Harry Potter e divirta-se!
         </p>
         <p>FORMULARIO / BOTÃO</p>
         <footer>
