@@ -19,7 +19,7 @@ function App() {
         <p>FORMULARIO / BOTÃO</p>
         <footer>
           <p>
-            Orgulhosamente criado por Carla
+            Orgulhosamente criado por Carla!
           </p>
         </footer>
 
