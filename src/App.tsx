@@ -9,8 +9,8 @@ function App() {
   return (
     <>
     <main>
-      <div className='border p-4 border-[#3F5185] '>
-      <header className='text-base bg-[#3F5185] pt-[18px] pb-[18px] pl-[33px] pr-[33px]' >
+      <div className='border p-4 border-[#740001] '>
+      <header className='text-base bg-primary pt-[18px] pb-[18px] pl-[33px] pr-[33px]' >
           <h1 className='text-[14px] ' >Teste suas habilidaes!</h1>
         </header>
         <p>

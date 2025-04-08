@@ -15,4 +15,13 @@
 
 body {
     font-family: sans-serif;
+    color: var(--text-text);
+}
+
+@theme {
+    --color-primary: #740001;
+    --text-text: #ffffff;
+    
+    
+    
 }
