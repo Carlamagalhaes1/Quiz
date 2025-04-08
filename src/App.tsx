@@ -10,8 +10,8 @@ function App() {
     <>
     <main>
       <div className='border p-4 border-[#3F5185] '>
-      <header className='text-base pt-[18px] pb-[18px] pl-[33px] pr-[33px]' >
-          <h1 >Teste suas habilidaes!</h1>
+      <header className='text-base bg-[#3F5185] pt-[18px] pb-[18px] pl-[33px] pr-[33px]' >
+          <h1 className='text-[14px] ' >Teste suas habilidaes!</h1>
         </header>
         <p>
           Teste os seus conhecimentos sobre o universo Harry Potter e divirta-se!!!
