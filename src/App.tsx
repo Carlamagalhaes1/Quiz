@@ -9,7 +9,7 @@ function App() {
   return (
     <>
     <main>
-      <div className='border p-4 border-[#740001] '>
+      <div className='border p-4 border-[#740001] max-w-[360px] '>
       <header className='text-base bg-primary pt-[18px] pb-[18px] pl-[33px] pr-[33px]' >
           <h1 className='text-[14px] ' >Teste suas habilidaes!</h1>
         </header>

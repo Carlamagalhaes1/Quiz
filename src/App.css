@@ -16,12 +16,61 @@
 body {
     font-family: sans-serif;
     color: var(--text-text);
+    background-color: var(--color-bg);
 }
 
 @theme {
     --color-primary: #740001;
-    --text-text: #ffffff;
+    --text-text: #FAF9F6;
+    --color-bg: #0D1B2A;
     
     
     
 }
+
+/* Grifinória (Gryffindor)
+
+Vermelho escuro: #740001 ✅ (essa que você já está usando)
+
+Dourado: #D3A625
+
+Sonserina (Slytherin)
+
+Verde escuro: #1A472A
+
+Prata: #C0C0C0
+
+Corvinal (Ravenclaw)
+(versão dos livros)
+
+Azul escuro: #0E1A40
+
+Bronze: #946B2D
+
+(versão dos filmes)
+
+Azul acinzentado: #222F5B
+
+Prata: #A6ADB7
+
+Lufa-Lufa (Hufflepuff)
+
+Amarelo mostarda: #FFDB00
+
+Preto: #000000
+
+Cores Neutras e de Fundo
+Fundo escuro tipo pergaminho: #F5E6C4
+
+Fundo de site mais sombrio: #1C1C1C
+
+Cinza mágico: #5A5A5A
+
+Branco encantado (para texto claro): #FAF9F6
+
+Extras (detalhes mágicos)
+Roxo místico (magia/dark arts): #4B306A
+
+Azul noturno (céu de Hogwarts): #0D1B2A
+
+Verde poção: #3A7D44
