@@ -23,10 +23,14 @@ body {
     --color-primary: #740001;
     --text-text: #FAF9F6;
     --color-bg: #0D1B2A;
-    
-    
-    
+       
 }
+
+@media (min-width: 600px) {
+    .responsive-container {
+      max-width: 360px;
+    }
+  }
 
 /* Grifinória (Gryffindor)
 
