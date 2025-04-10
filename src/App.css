@@ -13,11 +13,19 @@
 
 }
 
+.img{
+  
+
+}
+
+
+
 body {
     font-family: sans-serif;
     color: var(--text-text);
     background-color: var(--color-bg);
 }
+
 
 @theme {
     --color-primary: #740001;
