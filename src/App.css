@@ -25,6 +25,8 @@ html {
   background-repeat: no-repeat;
   height: 100vh; 
   width: 100%;
+  padding-left: 13px;
+  padding-right: 13px;
 }
 
 body {
@@ -54,6 +56,11 @@ body {
 @media (min-width: 600px) {
     .responsive-container {
       max-width: 360px;
+    }
+    .img{
+      padding-left: 10%;
+      padding-right: 10%;
+
     }
   }
 
