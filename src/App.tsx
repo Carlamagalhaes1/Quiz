@@ -11,9 +11,9 @@ function App() {
     <main className='img'>
       
       
-      <div className='border p-4 border-[#740001] responsive-container w-full bg-card '>
+      <div className='border p-4 border-[#740001] responsive-container w-full bg-card rounded-t-[4px] rounded-t-[4px] rounded-bl-[4px] rounded-br-[4px] '>
         
-      <header className='text-base bg-primary pt-[18px] pb-[18px] pl-[33px] pr-[33px]' >
+      <header className='text-base bg-primary pt-[18px] pb-[18px] pl-[33px] pr-[33px] ' >
           <h1 className='text-[14px] ' >Teste suas habilidaes!</h1>
         </header>
         <p>
