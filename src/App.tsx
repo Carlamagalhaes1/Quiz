@@ -8,10 +8,10 @@ function App() {
 
   return (
     <>
-    <main className='img'>
+    <main className='img' style={{flex: 1}}>
       
       
-      <div className='border p-4 border-[#740001] responsive-container w-full '>
+      <div className='border p-4 border-[#740001] responsive-container w-full bg-card '>
         
       <header className='text-base bg-primary pt-[18px] pb-[18px] pl-[33px] pr-[33px]' >
           <h1 className='text-[14px] ' >Teste suas habilidaes!</h1>
