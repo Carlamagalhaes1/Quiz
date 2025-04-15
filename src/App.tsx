@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-    <main className='img' style={{flex: 1}}>
+    <main className='img'>
       
       
       <div className='border p-4 border-[#740001] responsive-container w-full bg-card '>
