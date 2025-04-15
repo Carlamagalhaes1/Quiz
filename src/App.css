@@ -1,5 +1,3 @@
-
-
 @tailwind utilities;
 
 
@@ -11,23 +9,13 @@ html {
 }
 
 * {
-    padding: 1;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 1;
+  margin: 0;
+  box-sizing: border-box;
 
 }
 
-.img{
-  background: url("/images/bg.jpg");
-  background-size: cover;
-  background-size: contain; 
-  background-position: 70%;
-  background-repeat: no-repeat;
-  height: 100vh; 
-  width: 100%;
-  padding-left: 13px;
-  padding-right: 13px;
-}
+
 
 body {
   flex: 1;
@@ -39,30 +27,40 @@ body {
 
 
 body {
-    font-family: sans-serif;
-    color: var(--text-text);
-    background-color: var(--color-bg);
+  font-family: sans-serif;
+  color: var(--text-text);
+  background-color: var(--color-bg);
 }
 
 
 @theme {
-    --color-primary: #740001;
-    --text-text: #FAF9F6;
-    --color-bg: #0D1B2A;
-    --color-card:  #222F5B;
-       
+  --color-primary: #740001;
+  --text-text: #FAF9F6;
+  --color-bg: #0D1B2A;
+  --color-card: #222F5B;
+
 }
 
 @media (min-width: 600px) {
-    .responsive-container {
-      max-width: 360px;
-    }
-    .img{
-      padding-left: 10%;
-      padding-right: 10%;
-
-    }
+  .responsive-container {
+    max-width: 360px;
   }
+
+  .img {
+    background: url("/images/bg.jpg");
+    background-size: cover;
+    background-size: contain;
+    background-position: 70%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    padding-left: 13px;
+    padding-right: 13px;
+    padding-left: 10%;
+    padding-right: 10%;
+
+  }
+}
 
 /* Grifinória (Gryffindor)
 
