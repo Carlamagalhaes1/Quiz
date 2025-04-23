@@ -1,1 +1,5 @@
-w
+export default function Hpqquiz() {
+    <>
+    </>
+    
+}
