@@ -22,7 +22,7 @@ function App() {
           </header>
           <section className='py-6 px-8.5 text-sm'>
             <p>
-              Teste os seus conhecimentos sobre o universo Harry Potter eudivirta-se!!!
+              Testes os seus conhecimentos sobre o universo Harry Potter eudivirta-se!!!
             </p>
             <p>FORMULARIO / BOTÃO</p>
 
