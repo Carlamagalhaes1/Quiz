@@ -28,7 +28,7 @@ function App() {
         </div>
         <footer>
           <p>
-            Orgulhosamente criado por Carla!
+            Orgulhosamente criado por Carla!Q
           </p>
         </footer>
 
