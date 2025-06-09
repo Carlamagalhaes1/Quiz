@@ -1,15 +1,15 @@
-import { ReactNode } from "react";
+// src/components/Button.tsx
+import { ButtonHTMLAttributes } from "react";
 
-interface ButtonProps {
-  children: ReactNode;
-  onClick?: () => void;
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode;
 }
 
-export function Button({ children, onClick }: ButtonProps) {
+export function Button({ children, ...props }: ButtonProps) {
   return (
     <button
-      onClick={onClick}
-      className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-2 px-6 rounded-2xl shadow-md transition duration-300"
+      {...props}
+      className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-2 px-6 rounded-xl transition duration-200"
     >
       {children}
     </button>
