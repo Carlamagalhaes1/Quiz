@@ -1,16 +1,21 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 
 export default function Home() {
   const [name, setName] = useState('');
+  const [showAlert, setShowAlert] = useState(false);
   const navigate = useNavigate();
 
   const handleStart = (e: React.FormEvent) => {
     e.preventDefault();
+
     if (name.trim()) {
       navigate('/quiz', { state: { name } });
+    } else {
+      setShowAlert(true);
+      setTimeout(() => setShowAlert(false), 3000); // esconde após 3 segundos
     }
   };
 
@@ -25,8 +30,22 @@ export default function Home() {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="max-w-md w-full p-8 bg-black/70 backdrop-blur-md rounded-2xl shadow-2xl border border-yellow-600"
+        className="max-w-md w-full p-8 bg-black/40 backdrop-blur-sm rounded-2xl shadow-2xl border border-yellow-600 relative"
       >
+        {/* ALERTA */}
+        <AnimatePresence>
+          {showAlert && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="absolute top-4 left-1/2 transform -translate-x-1/2 bg-red-600 text-white px-4 py-2 rounded shadow-lg text-sm font-medium z-50"
+            >
+              Por favor, digite seu nome para começar!
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         <motion.img
           src={"/src/assets/logohp.png"}
           alt="Logo Harry Potter"
@@ -49,7 +68,7 @@ export default function Home() {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="Seu nome"
+            placeholder="Seu nome aqui"
             className="w-full px-4 py-2 rounded bg-gray-800 border border-gray-600 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
           />
 
