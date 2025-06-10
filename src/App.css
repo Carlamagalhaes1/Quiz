@@ -4,13 +4,16 @@
 
 
 body {
-  background-image: url('/public/images/logohp2.png');
-    
-  background-position: center;     
-  background-size: cover; 
-  background-repeat: no-repeat;  
-  overflow: hidden;
+  /* Gradiente sobre a imagem */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url('/images/trem.jpg');
   
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+  height: 100vh; 
+  margin: 0;     
+  overflow: hidden;
 }
 
 

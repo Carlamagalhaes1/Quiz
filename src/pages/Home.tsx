@@ -27,7 +27,7 @@ export default function Home() {
 
 
     return (
-        <div className="">
+        <div>
             <img src={logohp} alt="Harry Potter Logo" className="w-32 sm:w-48 mb-8" />
             <div className="w-full max-w-md mx-auto overflow-hidden rounded-lg shadow-lg">
                 <div className="bg-indigo-600 p-4 text-white">
