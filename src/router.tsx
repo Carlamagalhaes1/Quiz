@@ -10,7 +10,7 @@ export const router = createBrowserRouter ([
     },
     {
         path:'quiz',
-        element:<Quiz/>
+        element: <Quiz/>
     }
 
 ])

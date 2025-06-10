@@ -15,12 +15,12 @@ export default function Home() {
       return;
     }
 
-    // Redireciona para o quiz e envia o nome na navegação
+    
     navigate("/quiz", { state: { playerName: name } });
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-900 to-black flex flex-col items-center justify-center text-white px-4 py-8">
+    <div className="min-h-screen flex flex-col items-center justify-center text-white px-4 py-8">
       <img src={logohp} alt="Harry Potter Logo" className="w-32 sm:w-48 mb-8" />
 
       <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-center">
@@ -31,16 +31,16 @@ export default function Home() {
         Teste seus conhecimentos sobre o mundo mágico de Harry Potter. Você está pronto?
       </p>
 
-      {/* Formulário de nome */}
+      
       <form onSubmit={handleStart} className="flex flex-col items-center gap-4 w-full max-w-sm">
         <input
           type="text"
           placeholder="Digite seu nome"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="w-full px-4 py-2 rounded-xl text-black text-center"
+          className="w-full px-4 py-2 rounded-xl text-black text-center bg-amber-100"
         />
-        <Button type="submit">Começar o Quiz</Button>
+        <Button type="submit"><Link to="/quiz">Ir para o quiz</Link></Button>
       </form>
     </div>
   );

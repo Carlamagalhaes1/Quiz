@@ -1,11 +1,17 @@
 @import "tailwindcss";
 
+
+
+
 body {
+  background-image: url('/public/images/logohp2.png');
+    
+  background-position: center;     
+  background-size: cover; 
+  background-repeat: no-repeat;  
   overflow: hidden;
+  padding: 55px;
 }
-
-
-
 
 
 
