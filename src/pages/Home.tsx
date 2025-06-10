@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-
+import { motion } from 'framer-motion';
+import Alert from '../components/Alert';
 
 export default function Home() {
   const [name, setName] = useState('');
@@ -15,7 +15,7 @@ export default function Home() {
       navigate('/quiz', { state: { name } });
     } else {
       setShowAlert(true);
-      setTimeout(() => setShowAlert(false), 3000); // esconde após 3 segundos
+      setTimeout(() => setShowAlert(false), 3000);
     }
   };
 
@@ -30,21 +30,10 @@ export default function Home() {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="max-w-md w-full p-8 bg-black/40 backdrop-blur-sm rounded-2xl shadow-2xl border border-yellow-600 relative"
+        className="max-w-md w-full p-8 bg-black/10 backdrop-blur-xs rounded-2xl shadow-2xl border border-yellow-600 relative"
       >
-        {/* ALERTA */}
-        <AnimatePresence>
-          {showAlert && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="absolute top-4 left-1/2 transform -translate-x-1/2 bg-red-600 text-white px-4 py-2 rounded shadow-lg text-sm font-medium z-50"
-            >
-              Por favor, digite seu nome para começar!
-            </motion.div>
-          )}
-        </AnimatePresence>
+        
+        <Alert show={showAlert} message="Por favor, digite seu nome para começar!" />
 
         <motion.img
           src={"/src/assets/logohp.png"}
