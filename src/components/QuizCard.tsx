@@ -20,7 +20,7 @@ export function QuizCard({ question, currentIndex, total, onAnswer }: QuizCardPr
           <button
             key={idx}
             onClick={() => onAnswer(option)}
-            className="bg-purple-700 hover:bg-purple-800 text-white py-2 px-4 rounded-xl transition duration-200"
+            className="bg-purple-700 hover:bg-purple-800 text-white py-2 px-4 rounded-xl transition duration-100"
           >
             {option}
           </button>
