@@ -1,55 +1,68 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
-import { Button } from "../components/Button";
-
-import logohp from "../assets/logohp.png";
-
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 
 export default function Home() {
-    const [name, setName] = useState("");
+  const [name, setName] = useState('');
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
+  const handleStart = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (name.trim()) {
+      navigate('/quiz', { state: { name } });
+    }
+  };
 
+  return (
+    <div
+      className="min-h-screen bg-cover bg-center flex items-center justify-center px-4"
+      style={{
+        backgroundImage: "linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('/images/escola.jpeg')",
+      }}
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="max-w-md w-full p-8 bg-black/70 backdrop-blur-md rounded-2xl shadow-2xl border border-yellow-600"
+      >
+        <motion.img
+          src={"/src/assets/logohp.png"}
+          alt="Logo Harry Potter"
+          className="w-40 mx-auto mb-6"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ type: 'spring', stiffness: 100, delay: 0.3 }}
+        />
 
-    const handleStart = (e: React.FormEvent) => {
-        e.preventDefault();
+        <h1 className="text-3xl font-bold text-yellow-400 text-center mb-2 drop-shadow-md">
+          Quiz de Harry Potter
+        </h1>
 
-        if (name.trim() === "") {
-            alert("Por favor, digite seu nome.");
-            return;
-        }
+        <p className="text-gray-200 text-center mb-6">
+          Teste seus conhecimentos sobre o mundo mágico. Digite seu nome e entre na magia!
+        </p>
 
+        <form onSubmit={handleStart} className="space-y-4">
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Seu nome"
+            className="w-full px-4 py-2 rounded bg-gray-800 border border-gray-600 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+          />
 
-        navigate("/quiz", { state: { playerName: name } });
-    };
-
-
-
-    return (
-        <div>
-            <img src={logohp} alt="Harry Potter Logo" className="w-32 sm:w-48 mb-8" />
-            <div className="w-full max-w-md mx-auto overflow-hidden rounded-lg shadow-lg">
-                <div className="bg-indigo-600 p-4 text-white">
-                    <h2 className="text-xl font-medium">Teste suas habilidades</h2>
-                </div>
-                <div className="bg-gray-900 text-white p-6 space-y-6">
-                    <p className="text-center">
-                        Teste os seus conhecimentos sobre o universo Marvel e divirta-se criando o seu AluraQuiz!
-                    </p>
-                    <div className="space-y-4">
-                        <input
-                            onSubmit={handleStart}
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                            type="text"
-                            placeholder="Diz aí seu nome pra jogar :)"
-                            className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-400 "
-                        />
-                        <Button type="submit" className="w-full bg-gray-400 hover:bg-gray-500 text-gray-900 font-medium py-3"><Link to="/quiz">Ir para o quiz</Link></Button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
+          <motion.button
+            whileHover={{ scale: 1.05, boxShadow: '0 0 15px #facc15' }}
+            whileTap={{ scale: 0.95 }}
+            type="submit"
+            className="w-full bg-yellow-400 hover:bg-yellow-300 text-black font-semibold py-2 rounded shadow-md transition duration-300"
+          >
+            Começar Quiz
+          </motion.button>
+        </form>
+      </motion.div>
+    </div>
+  );
 }

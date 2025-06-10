@@ -1,20 +1,14 @@
 @import "tailwindcss";
 
 
-
-
 body {
-  /* Gradiente sobre a imagem */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url('/images/trem.jpg');
-  
+ background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/triodeouro.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  
-  height: 100vh; 
-  margin: 0;     
-  overflow: hidden;
-}
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;}
 
 
 
