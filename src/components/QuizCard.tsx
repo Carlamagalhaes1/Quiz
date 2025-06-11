@@ -20,7 +20,7 @@ export function QuizCard() {
       setCurrentIndex((prev) => prev + 1);
     } else {
       alert("Quiz finalizado!");
-      // Pode redirecionar ou mostrar resultado
+      
     }
   };
 
