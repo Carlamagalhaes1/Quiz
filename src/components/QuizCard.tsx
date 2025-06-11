@@ -25,27 +25,26 @@ export function QuizCard() {
   };
 
   return (
-    <div className="flex flex-col h-screen">
-      {/* Header */}
-      <div className="bg-indigo-700 text-white p-4 flex items-center">
+    <div className="flex flex-col h-screen  ">
+      <div className="bg-indigo-700 text-white p-4 flex items-center rounded-t-4xl ">
         <button className="mr-4">
           <ChevronLeft size={24} />
         </button>
-        <h1 className="text-lg font-medium">
+        <h1 className="text-lg font-medium ">
           Pergunta {currentIndex + 1} de {questions.length}
         </h1>
       </div>
 
-      {/* Quiz content */}
-      <div className="flex-1 bg-gray-900 text-white p-6 flex flex-col">
-        {/* Pergunta */}
-        <div className="mb-8">
+    
+      <div className=" rounded-b-4xl bg-gray-900 text-white p-6 flex flex-col">
+  
+        <div className="mb-2">
           <h2 className="text-xl font-bold mb-1">{currentQuestion.question}</h2>
         </div>
 
-        {/* Opções */}
-        <div >
-          <div className="space-y-3 mb-6">
+
+        <div  >
+          <div className="space-y-3 mb-3 ">
             {currentQuestion.options.map((option) => (
             <button
               key={option}
@@ -73,10 +72,7 @@ export function QuizCard() {
           CONFIRMAR
         </button>
           
-        </div>
-
-        {/* Confirmar */}
-       
+        </div>   
       </div>
     </div>
   );
