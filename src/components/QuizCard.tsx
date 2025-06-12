@@ -7,28 +7,27 @@ export function QuizCard() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [confirmedOption, setConfirmedOption] = useState<string | null>(null);
-  const [showEndModal, setShowEndModal] = useState(false);
   const navigate = useNavigate();
   const currentQuestion = questions[currentIndex];
 
   const handleOptionSelect = (option: string) => {
-    if (confirmedOption) return; // bloqueia seleção após confirmação
+    if (confirmedOption) return;
     setSelectedOption(option);
   };
 
   const handleConfirm = () => {
     if (!selectedOption) return;
-
     setConfirmedOption(selectedOption);
   };
 
   const handleNext = () => {
     setSelectedOption(null);
     setConfirmedOption(null);
+
     if (currentIndex < questions.length - 1) {
       setCurrentIndex((prev) => prev + 1);
     } else {
-      setShowEndModal(true);
+      navigate("/results");
     }
   };
 
@@ -37,11 +36,6 @@ export function QuizCard() {
     if (confirmBack) {
       navigate("/");
     }
-  };
-
-  const handleEnd = () => {
-    setShowEndModal(false);
-    navigate("/");
   };
 
   return (
@@ -65,13 +59,11 @@ export function QuizCard() {
                 "w-full p-4 rounded-lg text-left transition duration-300 border border-yellow-400 ";
 
               if (!confirmedOption) {
-                // antes da confirmação
                 className +=
                   selectedOption === option
                     ? "bg-yellow-400 text-black font-semibold shadow-inner"
                     : "bg-gray-800 hover:bg-yellow-400 hover:text-black";
               } else {
-                // depois de confirmar, mostra verde/vermelho
                 if (option === currentQuestion.correctAnswer) {
                   className += "bg-green-600 text-white font-semibold border-green-600";
                 } else if (option === confirmedOption && option !== currentQuestion.correctAnswer) {
@@ -111,28 +103,11 @@ export function QuizCard() {
               onClick={handleNext}
               className="w-full py-3 rounded-lg font-medium tracking-wide bg-yellow-400 hover:bg-yellow-300 text-black transition"
             >
-              PRÓXIMA
+              {currentIndex === questions.length - 1 ? "VER RESULTADO" : "PRÓXIMA"}
             </button>
           )}
         </div>
       </div>
-
-      {showEndModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
-          <div className="bg-gray-800 text-white p-8 rounded-2xl max-w-md w-full shadow-lg border border-yellow-400">
-            <h2 className="text-2xl font-bold mb-4 text-yellow-400">✨ Parabéns, bruxo(a)! ✨</h2>
-            <p className="mb-6 text-lg">
-              Você concluiu o quiz mágico com sucesso. Que a sabedoria de Hogwarts esteja sempre com você!
-            </p>
-            <button
-              onClick={handleEnd}
-              className="w-full py-3 rounded-lg bg-yellow-400 hover:bg-yellow-300 text-black font-semibold transition"
-            >
-              Voltar ao Início
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
