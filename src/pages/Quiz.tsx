@@ -14,13 +14,14 @@ export default function Quiz() {
         style={{ backgroundImage: "url('/images/escolahp.jpg')" }}
       />
 
-      <div className=" mt-4 z-10 max-w-5xl">
-        <div className="text-white mb-3 sm:ps-12">
-          <h1 className="text-3xl ps-2 sm:text-4xl font-bold mb-1">Bem-vindo, {name}!</h1>
-          <p className="text-lg ps-2">Prepare-se para o quiz mágico ✨</p>
-        </div>
+      <div className="mt-4 z-10 max-w-5xl">
 
-        <div className="ps-4  sm:ps-12">
+
+        <div className="ps-4  sm:ps-12 pe-3.5">
+          <div className="text-white mb-6">
+            <h1 className="text-3xl ps-1 sm:text-4xl font-bold mb-1">Bem-vindo, {name}!</h1>
+            <p className="text-lg ps-2 ">Prepare-se para o quiz mágico ✨</p>
+          </div>
           <QuizCard />
         </div>
       </div>
