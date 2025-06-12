@@ -50,7 +50,8 @@ export default function Quiz() {
               <img
                 src={isAnswerCorrect ? correctIcon : wrongIcon}
                 alt={isAnswerCorrect ? "Resposta correta" : "Resposta errada"}
-                className="w-100 h-100 mt-10 object-contain drop-shadow-xl transition-all duration-300 "
+                className="w-40 h-40 sm:w-60 sm:h-60 md:w-80 md:h-80 lg:w-96 lg:h-96 mt-10 object-contain drop-shadow-xl transition-all duration-300 "
+
 
               />
             </div>
