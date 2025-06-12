@@ -21,7 +21,7 @@ export function QuizCard() {
     if (currentIndex < questions.length - 1) {
       setCurrentIndex((prev) => prev + 1);
     } else {
-      setShowEndModal(true); // Exibe o modal final
+      setShowEndModal(true); 
     }
   };
 
@@ -49,7 +49,7 @@ export function QuizCard() {
         </h1>
       </div>
       <div className="p-5  bg-gray-900">
-        <h2 className="text-2xl font-harryPotter font-semibold mb-4 text-yellow-400">
+        <h2 className="text-2xl font-harryPotter font-semibold mb-4 text-yellow-400 drop-shadow-[2px_1px_0px_black]">
           {currentQuestion.question}
         </h2>
         <div className="space-y-3 mb-5">
@@ -82,7 +82,7 @@ export function QuizCard() {
       </div>
     </div>
 
-    {/* Modal final igual */}
+    
     {showEndModal && (
       <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
         <div className="bg-gray-800 text-white p-8 rounded-2xl max-w-md w-full shadow-lg border border-yellow-400">

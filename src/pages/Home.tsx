@@ -23,14 +23,14 @@ export default function Home() {
     <div
       className="min-h-screen bg-cover bg-center flex items-center justify-center px-4"
       style={{
-        backgroundImage: "linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('/images/escola.jpeg')",
+        backgroundImage: "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.9)), url('/images/escola.jpeg')",
       }}
     >
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="max-w-md w-full p-8 bg-black/10 backdrop-blur-xs rounded-2xl shadow-2xl border border-yellow-600 relative"
+        className="max-w-md w-full p-8 bg-black/5 backdrop-blur-xs rounded-2xl shadow-2xl border border-yellow-600 relative"
       >
         
         <Alert show={showAlert} message="Por favor, digite seu nome para começar!" />
