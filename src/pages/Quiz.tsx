@@ -7,7 +7,7 @@ export default function Quiz() {
 
   return (
 
-    <div className='h-screen relative flex flex-col mt-4 '>
+    <div className='h-screen relative flex flex-col  '>
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/90 z-1" />
       <div
         className="absolute inset-1.5  bg-center z-[-1]"

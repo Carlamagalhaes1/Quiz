@@ -40,19 +40,19 @@ export function QuizCard() {
   return (
      <div className="w-full max-w-lg  mb-10 sm:mb-16 ">
     <div className="bg-[#1e1e1e] text-white rounded-3xl shadow-[0_0_20px_rgba(255,215,0,0.2)] border border-yellow-400 overflow-hidden">
-      <div className="bg-yellow-400 text-black p-4 flex items-center justify-between">
+      <div className="bg-yellow-400 text-black p-3 flex items-center justify-between">
         <button onClick={handleBack} className="text-black hover:text-white transition">
           <ChevronLeft size={28} />
         </button>
-        <h1 className="text-lg font-bold tracking-wide">
+        <h1 className="text-lg font-bold tracking-wide ">
           Pergunta {currentIndex + 1} de {questions.length}
         </h1>
       </div>
-      <div className="p-6 bg-gray-900">
+      <div className="p-5  bg-gray-900">
         <h2 className="text-2xl font-harryPotter font-semibold mb-4 text-yellow-400">
           {currentQuestion.question}
         </h2>
-        <div className="space-y-3 mb-6">
+        <div className="space-y-3 mb-5">
           {currentQuestion.options.map((option) => (
             <button
               key={option}
