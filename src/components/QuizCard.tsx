@@ -1,4 +1,3 @@
-import { ChevronLeft } from "lucide-react";
 import { useState } from "react";
 import { questions } from "../data/questions";
 import { useNavigate } from "react-router-dom";
@@ -31,24 +30,15 @@ export function QuizCard() {
     }
   };
 
-  const handleBack = () => {
-    const confirmBack = window.confirm("Você quer mesmo voltar? Isso vai apagar seu progresso!");
-    if (confirmBack) {
-      navigate("/");
-    }
-  };
-
   return (
     <div className="w-full max-w-lg mb-10 sm:mb-16">
       <div className="bg-[#1e1e1e] text-white rounded-3xl shadow-[0_0_20px_rgba(255,215,0,0.2)] border border-yellow-400 overflow-hidden">
-        <div className="bg-yellow-400 text-black p-3 flex items-center justify-between">
-          <button onClick={handleBack} className="text-black hover:text-white transition">
-            <ChevronLeft size={28} />
-          </button>
-          <h1 className="text-lg font-bold tracking-wide ">
+        <div className="bg-yellow-400 text-black p-3 justify-items-end ">
+          <h1 className="text-lg font-bold pe-2.5 racking-wide">
             Pergunta {currentIndex + 1} de {questions.length}
           </h1>
         </div>
+
         <div className="p-5 bg-gray-900">
           <h2 className="text-2xl font-harryPotter font-semibold mb-4 text-yellow-400 drop-shadow-[2px_1px_0px_black]">
             {currentQuestion.question}
@@ -85,7 +75,6 @@ export function QuizCard() {
               );
             })}
           </div>
-
           {!confirmedOption ? (
             <button
               onClick={handleConfirm}
