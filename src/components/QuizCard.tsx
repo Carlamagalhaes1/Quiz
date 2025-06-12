@@ -2,7 +2,11 @@ import { useState } from "react";
 import { questions } from "../data/questions";
 import { useNavigate } from "react-router-dom";
 
-export function QuizCard() {
+type QuizCardProps = {
+  onAnswerFeedback: (isCorrect: boolean | null) => void;
+};
+
+export function QuizCard({ onAnswerFeedback }: QuizCardProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [confirmedOption, setConfirmedOption] = useState<string | null>(null);
@@ -17,11 +21,15 @@ export function QuizCard() {
   const handleConfirm = () => {
     if (!selectedOption) return;
     setConfirmedOption(selectedOption);
+
+    const isCorrect = selectedOption === currentQuestion.correctAnswer;
+    onAnswerFeedback(isCorrect); 
   };
 
   const handleNext = () => {
     setSelectedOption(null);
     setConfirmedOption(null);
+    onAnswerFeedback(null); 
 
     if (currentIndex < questions.length - 1) {
       setCurrentIndex((prev) => prev + 1);
@@ -32,7 +40,7 @@ export function QuizCard() {
 
   return (
     <div className="w-full max-w-lg mb-10 sm:mb-16">
-      <div className="bg-[#1e1e1e] text-white rounded-3xl shadow-[0_0_30px_rgba(255,215,0,0.3)] border border-yellow-400 overflow-hidden">
+      <div className="bg-[#1e1e1e] text-white rounded-3xl shadow-[0_0_30px_rgba(255,215,0,0.2)] border border-yellow-400 overflow-hidden">
         <div className="bg-yellow-400 text-black p-3 justify-items-end ">
           <h1 className="text-lg font-bold pe-2.5 racking-wide">
             Pergunta {currentIndex + 1} de {questions.length}

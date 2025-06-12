@@ -1,12 +1,18 @@
 import { ChevronLeft } from "lucide-react";
 import { QuizCard } from "../components/QuizCard";
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
+
+import correctIcon from "../assets/feliz.png";
+import wrongIcon from "../assets/Triste.png";
 
 export default function Quiz() {
   const location = useLocation();
-  const name = location.state?.name || 'bruxo misterioso';
+  const name = location.state?.name || "bruxo misterioso";
   const navigate = useNavigate();
+
+  const [isAnswerCorrect, setIsAnswerCorrect] = useState<boolean | null>(null);
 
   const handleBack = () => {
     const confirmBack = window.confirm("Você quer mesmo voltar? Isso vai apagar seu progresso!");
@@ -16,8 +22,7 @@ export default function Quiz() {
   };
 
   return (
-    <div className='h-screen relative flex flex-col'>
-     
+    <div className="h-screen relative flex flex-col">
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/90 z-1" />
       <div
         className="absolute inset-1.5 bg-center z-[-1]"
@@ -26,17 +31,29 @@ export default function Quiz() {
 
       <button
         onClick={handleBack}
-        className="absolute top-7.5 left-6 z-20 text-yellow-400 hover:text-white transition"
+        className="absolute top-7.5 left-6 z-20 text-white hover:text-yellow-400 transition"
       >
         <ChevronLeft size={32} />
       </button>
-      <div className="mt-4 z-10 max-w-5xl">
-        <div className="mt-2 sm:ps-12 pe-3.5 ps-4">
-          <div className="text-white mb-6">
-            <h1 className="text-3xl ps-1 sm:text-4xl font-bold">Bem-vindo, {name}!</h1>
-            <p className="text-lg ps-2">Prepare-se para o quiz mágico ✨</p>
-          </div>
-          <QuizCard />
+
+      <div className="mt-4 z-10 max-w-6xl w-full mx-auto px-6 sm:px-12">
+        <div className="text-white mb-6">
+          <h1 className="text-3xl sm:text-4xl font-bold">Bem-vindo, {name}!</h1>
+          <p className="text-lg">Prepare-se para o quiz mágico ✨</p>
+        </div>
+
+        <div className="flex flex-col lg:flex-row items-start gap-8">
+          <QuizCard onAnswerFeedback={setIsAnswerCorrect} />
+
+          {isAnswerCorrect !== null && (
+            <div className="flex-1 flex justify-center items-center">
+              <img
+                src={isAnswerCorrect ? correctIcon : wrongIcon}
+                alt={isAnswerCorrect ? "Resposta correta" : "Resposta errada"}
+                className="w-72 h-72 object-contain drop-shadow-xl transition-all duration-300"
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>
