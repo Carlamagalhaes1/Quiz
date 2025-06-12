@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 
-import correctIcon from "../assets/feliz.png";
+import correctIcon from "../assets/Felizzz.png";
 import wrongIcon from "../assets/Triste.png";
 
 export default function Quiz() {
@@ -50,7 +50,8 @@ export default function Quiz() {
               <img
                 src={isAnswerCorrect ? correctIcon : wrongIcon}
                 alt={isAnswerCorrect ? "Resposta correta" : "Resposta errada"}
-                className="w-72 h-72 object-contain drop-shadow-xl transition-all duration-300"
+                className="w-100 h-100 mt-10 object-contain drop-shadow-xl transition-all duration-300 "
+
               />
             </div>
           )}
