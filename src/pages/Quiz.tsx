@@ -1,4 +1,3 @@
-// src/pages/Quiz.tsx
 import { useLocation } from 'react-router-dom';
 import { QuizCard } from '../components/QuizCard';
 
@@ -7,27 +6,27 @@ export default function Quiz() {
   const name = location.state?.name || 'bruxo misterioso';
 
   return (
-    <div className="min-h-screen flex items-start justify-start p-8 relative">
 
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/90 z-0" />
+    <div className='h-screen relative flex flex-col mt-4 '>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/90 z-1" />
       <div
-        className="absolute inset-0 bg-cover bg-center z-[-1]"
+        className="absolute inset-1.5  bg-center z-[-1]"
         style={{ backgroundImage: "url('/images/escolahp.jpg')" }}
       />
 
-
-      <div className="z-10 w-full max-w-4xl">
-
-        <div className="mb-6 text-white">
-          <h1 className="text-4xl font-bold mb-2">Bem-vindo, {name}!</h1>
-          <p className="text-lg">Prepare-se para o quiz mágico ✨</p>
+      <div className=" mt-4 z-10 max-w-5xl">
+        <div className="text-white mb-3 sm:ps-12">
+          <h1 className="text-3xl ps-2 sm:text-4xl font-bold mb-1">Bem-vindo, {name}!</h1>
+          <p className="text-lg ps-2">Prepare-se para o quiz mágico ✨</p>
         </div>
 
-
-        <div className="w-full max-w-xl">
+        <div className="ps-4  sm:ps-12">
           <QuizCard />
         </div>
       </div>
     </div>
+
+
+
   );
 }
