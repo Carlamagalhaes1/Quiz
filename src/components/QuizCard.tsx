@@ -32,7 +32,7 @@ export function QuizCard() {
 
   return (
     <div className="w-full max-w-lg mb-10 sm:mb-16">
-      <div className="bg-[#1e1e1e] text-white rounded-3xl shadow-[0_0_20px_rgba(255,215,0,0.2)] border border-yellow-400 overflow-hidden">
+      <div className="bg-[#1e1e1e] text-white rounded-3xl shadow-[0_0_30px_rgba(255,215,0,0.3)] border border-yellow-400 overflow-hidden">
         <div className="bg-yellow-400 text-black p-3 justify-items-end ">
           <h1 className="text-lg font-bold pe-2.5 racking-wide">
             Pergunta {currentIndex + 1} de {questions.length}
