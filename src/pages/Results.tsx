@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { RankingEntry } from "../types/results";
 
-type RankingEntry = {
-  name: string;
-  score: number;
-};
+
 
 export default function Results() {
   const location = useLocation();
@@ -41,11 +39,11 @@ export default function Results() {
     <div className="relative min-h-screen flex items-center justify-center bg-black px-4">
       
       <div
-        className="absolute inset-0 bg-cover bg-center filter blur-lg opacity-80"
+        className="absolute inset-0 bg-cover bg-center filter blur-lg opacity-90"
         style={{ backgroundImage: "url('/images/escolahp.jpg')" }}
       />
 
-      {/* Conteúdo centralizado e destacado */}
+      
       <div className="relative max-w-lg w-full p-6 sm:p-8 bg-black/70 backdrop-blur-lg rounded-3xl shadow-lg border border-yellow-400 z-10">
         <h1 className="text-3xl sm:text-4xl font-extrabold text-yellow-400 mb-5 drop-shadow-lg text-center">
           Sua Pontuação
