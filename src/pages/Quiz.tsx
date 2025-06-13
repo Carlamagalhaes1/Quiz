@@ -31,9 +31,9 @@ export default function Quiz() {
 
       <button
         onClick={handleBack}
-        className="absolute top-7.5 left-6 z-20 text-white hover:text-yellow-400 transition"
+        className=" w-9 mt-3 ps-3  md:absolute top-7.5 left-6 z-20 text-white hover:text-yellow-300 transition   "
       >
-        <ChevronLeft size={32} />
+        <ChevronLeft size={32}  />
       </button>
 
       <div className="mt-4 z-10 max-w-6xl w-full mx-auto px-6 sm:px-12">
@@ -50,7 +50,7 @@ export default function Quiz() {
               <img
                 src={isAnswerCorrect ? correctIcon : wrongIcon}
                 alt={isAnswerCorrect ? "Resposta correta" : "Resposta errada"}
-                className="w-40 h-40 sm:w-60 sm:h-60 md:w-80 md:h-80 lg:w-96 lg:h-96 mt-10 object-contain drop-shadow-xl transition-all duration-300 "
+                className="  w-40 h-40 absolute left-1 top-3/4 mb-9 sm:static sm:left-auto sm:top-auto sm:mb-0 sm:w-60 sm:h-60 md:w-80 md:h-80 lg:w-96 lg:h-96 mt-10 object-contain drop-shadow-xl transition-all duration-300 "
 
 
               />
