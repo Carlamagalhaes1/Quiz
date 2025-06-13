@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { questions } from "../data/questions";
-import { useNavigate } from "react-router-dom";
 
 type QuizCardProps = {
   onAnswerFeedback: (isCorrect: boolean | null) => void;
+  onQuizEnd: () => void;  // nova prop para avisar que o quiz acabou
 };
 
-export function QuizCard({ onAnswerFeedback }: QuizCardProps) {
+export function QuizCard({ onAnswerFeedback, onQuizEnd }: QuizCardProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [confirmedOption, setConfirmedOption] = useState<string | null>(null);
-  const navigate = useNavigate();
+
   const currentQuestion = questions[currentIndex];
 
   const handleOptionSelect = (option: string) => {
@@ -23,18 +23,19 @@ export function QuizCard({ onAnswerFeedback }: QuizCardProps) {
     setConfirmedOption(selectedOption);
 
     const isCorrect = selectedOption === currentQuestion.correctAnswer;
-    onAnswerFeedback(isCorrect); 
+    onAnswerFeedback(isCorrect);
   };
 
   const handleNext = () => {
     setSelectedOption(null);
     setConfirmedOption(null);
-    onAnswerFeedback(null); 
+    onAnswerFeedback(null);
 
     if (currentIndex < questions.length - 1) {
       setCurrentIndex((prev) => prev + 1);
     } else {
-      navigate("/results");
+      // Ao invés de navegar direto, chama onQuizEnd para o pai decidir
+      onQuizEnd();
     }
   };
 

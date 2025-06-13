@@ -3,7 +3,6 @@ import { QuizCard } from "../components/QuizCard";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-
 import correctIcon from "../assets/Felizzz.png";
 import wrongIcon from "../assets/Triste.png";
 
@@ -13,12 +12,27 @@ export default function Quiz() {
   const navigate = useNavigate();
 
   const [isAnswerCorrect, setIsAnswerCorrect] = useState<boolean | null>(null);
+  const [score, setScore] = useState(0);
 
   const handleBack = () => {
     const confirmBack = window.confirm("Você quer mesmo voltar? Isso vai apagar seu progresso!");
     if (confirmBack) {
       navigate("/");
     }
+  };
+
+  // Função que recebe se a resposta foi correta ou não
+  // Atualiza o estado para mostrar o ícone e soma pontos se correto
+  const handleAnswerFeedback = (isCorrect: boolean | null) => {
+    setIsAnswerCorrect(isCorrect);
+    if (isCorrect) {
+      setScore((prev) => prev + 1);
+    }
+  };
+
+  // Função para ser chamada quando o quiz acabar, navega para resultados passando nome e pontuação
+  const handleQuizEnd = () => {
+    navigate("/results", { state: { score, playerName: name } });
   };
 
   return (
@@ -31,9 +45,9 @@ export default function Quiz() {
 
       <button
         onClick={handleBack}
-        className=" w-9 mt-4 ps-3  md:absolute top-7.5 left-6 z-20 text-white hover:text-yellow-300 transition   "
+        className=" w-9 mt-4 ps-3  md:absolute top-7.5 left-6 z-20 text-white hover:text-yellow-300 transition"
       >
-        <ChevronLeft size={32}  />
+        <ChevronLeft size={32} />
       </button>
 
       <div className=" z-10 max-w-6xl w-full mx-auto px-6 sm:px-12 md:mt-3">
@@ -43,16 +57,17 @@ export default function Quiz() {
         </div>
 
         <div className="flex flex-col lg:flex-row items-start gap-8">
-          <QuizCard onAnswerFeedback={setIsAnswerCorrect} />
+          <QuizCard
+            onAnswerFeedback={handleAnswerFeedback}
+            onQuizEnd={handleQuizEnd} // essa prop você precisa implementar no QuizCard para chamar quando acabar o quiz
+          />
 
           {isAnswerCorrect !== null && (
             <div className="flex-1 flex justify-center items-center">
               <img
                 src={isAnswerCorrect ? correctIcon : wrongIcon}
                 alt={isAnswerCorrect ? "Resposta correta" : "Resposta errada"}
-                className="  w-40 h-40 absolute left-1 top-3/4 mb-9 mt-10 sm:static sm:left-auto sm:top-auto sm:mb-0 sm:w-60 sm:h-60 md:w-80 md:h-80 lg:w-96 lg:h-96 object-contain drop-shadow-xl transition-all duration-300 "
-
-
+                className="w-40 h-40 absolute left-1 top-3/4 mb-9 mt-10 sm:static sm:left-auto sm:top-auto sm:mb-0 sm:w-60 sm:h-60 md:w-80 md:h-80 lg:w-96 lg:h-96 object-contain drop-shadow-xl transition-all duration-300"
               />
             </div>
           )}
