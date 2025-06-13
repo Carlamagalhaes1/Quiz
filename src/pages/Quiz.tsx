@@ -38,8 +38,8 @@ export default function Quiz() {
 
       <div className="mt-4 z-10 max-w-6xl w-full mx-auto px-6 sm:px-12">
         <div className="text-white mb-6">
-          <h1 className="text-3xl sm:text-4xl font-bold">Bem-vindo, {name}!</h1>
-          <p className="text-lg">Prepare-se para o quiz mágico ✨</p>
+          <h1 className="text-3xl p-2 sm:text-4xl font-bold">Bem-vindo, {name}!</h1>
+          <p className="text-lg ps-2">Prepare-se para o quiz mágico ✨</p>
         </div>
 
         <div className="flex flex-col lg:flex-row items-start gap-8">
