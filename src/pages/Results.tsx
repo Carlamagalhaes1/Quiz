@@ -23,7 +23,7 @@ export default function Results() {
     if (!saved) {
       const newRanking = [...ranking, { name: playerName, score }];
       newRanking.sort((a, b) => b.score - a.score);
-      if (newRanking.length > 10) newRanking.length = 10;
+      if (newRanking.length > 5) newRanking.length = 5;
 
       localStorage.setItem("quiz-ranking", JSON.stringify(newRanking));
       setRanking(newRanking);
@@ -53,7 +53,7 @@ export default function Results() {
           {score}
         </div>
 
-        <h2 className="text-xl sm:text-2xl text-yellow-400 font-semibold mb-3 border-b border-yellow-400 pb-2">
+        <h2 className="text-xl sm:text-2xl text-yellow-400 font-semibold mb-3 border-b border-yellow-600 pb-2">
           Ranking Top 10
         </h2>
 
@@ -74,12 +74,13 @@ export default function Results() {
             </li>
           ))}
         </ol>
+localStorage.removeItem('quiz-ranking');
 
         <button
           onClick={playAgain}
           className="mt-6 sm:mt-8 w-full py-3 sm:py-4 bg-yellow-400 hover:bg-yellow-300 text-black font-semibold rounded-xl shadow-lg transition duration-300 drop-shadow-md"
         >
-          Jogar Novamente
+          JOGAR NOVAMENTE
         </button>
       </div>
     </div>
