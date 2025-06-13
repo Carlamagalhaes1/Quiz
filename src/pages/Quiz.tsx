@@ -31,13 +31,13 @@ export default function Quiz() {
 
       <button
         onClick={handleBack}
-        className=" w-9 mt-3 ps-3  md:absolute top-7.5 left-6 z-20 text-white hover:text-yellow-300 transition   "
+        className=" w-9 mt-4 ps-3  md:absolute top-7.5 left-6 z-20 text-white hover:text-yellow-300 transition   "
       >
         <ChevronLeft size={32}  />
       </button>
 
-      <div className="mt-4 z-10 max-w-6xl w-full mx-auto px-6 sm:px-12">
-        <div className="text-white mb-6">
+      <div className=" z-10 max-w-6xl w-full mx-auto px-6 sm:px-12 md:mt-3">
+        <div className="text-white mb-4">
           <h1 className="text-3xl p-2 sm:text-4xl font-bold">Bem-vindo, {name}!</h1>
           <p className="text-lg ps-2">Prepare-se para o quiz mágico ✨</p>
         </div>
@@ -50,7 +50,7 @@ export default function Quiz() {
               <img
                 src={isAnswerCorrect ? correctIcon : wrongIcon}
                 alt={isAnswerCorrect ? "Resposta correta" : "Resposta errada"}
-                className="  w-40 h-40 absolute left-1 top-3/4 mb-9 sm:static sm:left-auto sm:top-auto sm:mb-0 sm:w-60 sm:h-60 md:w-80 md:h-80 lg:w-96 lg:h-96 mt-10 object-contain drop-shadow-xl transition-all duration-300 "
+                className="  w-40 h-40 absolute left-1 top-3/4 mb-9 mt-10 sm:static sm:left-auto sm:top-auto sm:mb-0 sm:w-60 sm:h-60 md:w-80 md:h-80 lg:w-96 lg:h-96 object-contain drop-shadow-xl transition-all duration-300 "
 
 
               />
