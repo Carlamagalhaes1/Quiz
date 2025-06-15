@@ -4,7 +4,15 @@ import Quiz from "./pages/Quiz";
 import Results from "./pages/Results";
 
 
-export const router = createBrowserRouter ([
+
+export const router = createBrowserRouter (
+
+   
+    [
+
+    
+
+    
     {
         path:'/',
         element: <Home/>
@@ -18,4 +26,5 @@ export const router = createBrowserRouter ([
         element:<Results/>
     }
 
-])
+]
+)

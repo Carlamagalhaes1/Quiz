@@ -52,14 +52,14 @@ export default function Quiz() {
 
       <div className=" z-10 max-w-6xl w-full mx-auto px-6 sm:px-12 md:mt-3">
         <div className="text-white mb-4">
-          <h1 className="text-3xl p-2 sm:text-4xl font-bold">Bem-vindo, {name}!</h1>
-          <p className="text-lg ps-2">Prepare-se para o quiz mágico ✨</p>
+          <h1 className="text-3xl text-center sm:text-4xl lg:text-left font-bold">Bem-vindo, {name}!</h1>
+          <p className="text-lg text-center lg:text-left ">Prepare-se para o quiz mágico ✨</p>
         </div>
 
         <div className="flex flex-col lg:flex-row items-start gap-8">
           <QuizCard
             onAnswerFeedback={handleAnswerFeedback}
-            onQuizEnd={handleQuizEnd} // essa prop você precisa implementar no QuizCard para chamar quando acabar o quiz
+            onQuizEnd={handleQuizEnd} 
           />
 
           {isAnswerCorrect !== null && (

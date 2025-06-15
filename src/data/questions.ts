@@ -37,13 +37,13 @@ export const questions: Question[] = [
     correctAnswer: "Dobby",
   },
   {
-    question: "Quem matou Dumbledore?",
+    question: "Que personagem matou Dumbledore?",
     options: ["Bellatrix Lestrange", "Severo Snape", "Lord Voldemort", "Draco Malfoy"],
     correctAnswer: "Severo Snape",
   },
   {
     question: "Qual é o patrono do Harry?",
-    options: ["Cervo", "Cavalo", "Lobo", "Fênix"],
+    options: ["Lobo", "Cavalo", "Cervo", "Fênix"],
     correctAnswer: "Cervo",
   },
   {
@@ -58,7 +58,7 @@ export const questions: Question[] = [
   },
   {
     question: "Qual é o nome do banco dos bruxos?",
-    options: ["Gringotes", "Gringotts", "Grimmauld", "Olivanders"],
+    options: ["Olivanders", "Gringotts", "Grimmauld", "Gringotes"],
     correctAnswer: "Gringotes",
   },
   {

@@ -21,7 +21,7 @@ export default function Home() {
 
   return (
     <div
-      className="min-h-screen bg-cover bg-center flex items-center justify-center px-4"
+      className="min-h-screen  bg-cover bg-center flex items-center justify-center px-4"
       style={{
         backgroundImage: "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.9)), url('/images/escola.jpeg')",
       }}
@@ -67,7 +67,7 @@ export default function Home() {
             type="submit"
             className="w-full bg-yellow-400 hover:bg-yellow-300 text-black font-semibold py-2 rounded shadow-md transition duration-300"
           >
-            Começar Quiz
+            COMEÇAR QUIZ
           </motion.button>
         </form>
       </motion.div>

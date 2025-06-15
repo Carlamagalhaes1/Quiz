@@ -74,7 +74,7 @@ export default function Results() {
             </li>
           ))}
         </ol>
-localStorage.removeItem('quiz-ranking');
+
 
         <button
           onClick={playAgain}
@@ -86,3 +86,5 @@ localStorage.removeItem('quiz-ranking');
     </div>
   );
 }
+
+{/*localStorage.removeItem('quiz-ranking');*/}
