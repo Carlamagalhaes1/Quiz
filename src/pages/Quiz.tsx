@@ -52,7 +52,7 @@ export default function Quiz() {
 
       <div className=" z-10 max-w-6xl w-full mx-auto px-6 sm:px-12 md:mt-3">
         <div className="text-white mb-4">
-          <h1 className="text-3xl text-center sm:text-4xl lg:text-left font-bold">Bem-vindo, {name}!</h1>
+          <h1 className="text-3xl mt-4 text-center sm:text-4xl lg:text-left font-bold">Bem-vindo, {name}!</h1>
           <p className="text-lg text-center lg:text-left ">Prepare-se para o quiz mágico ✨</p>
         </div>
 
