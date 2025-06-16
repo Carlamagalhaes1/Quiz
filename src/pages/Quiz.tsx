@@ -16,10 +16,9 @@ export default function Quiz() {
   const [score, setScore] = useState(0);
 
   const handleBack = () => {
-    const confirmBack = window.confirm("Você quer mesmo voltar? Isso vai apagar seu progresso!");
-    if (confirmBack) {
+    
       navigate("/");
-    }
+    
   };
 
 
