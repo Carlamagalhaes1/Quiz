@@ -44,7 +44,7 @@ export default function Quiz() {
 
       <button
         onClick={handleBack}
-        className=" w-9 mt-4 ps-3  md:absolute top-7.5 left-6 z-20 text-white hover:text-yellow-300 transition"
+        className=" w-9 mt-10 ps-3  md:absolute top-7.5 left-6 z-20 text-white hover:text-yellow-300 transition"
       >
         <ChevronLeft size={32} />
       </button>
@@ -52,7 +52,7 @@ export default function Quiz() {
 
       <div className=" z-10 max-w-6xl w-full mx-auto px-6 sm:px-12 md:mt-3">
         <div className="text-white mb-4">
-          <h1 className="text-2xl mt-4 text-center sm:text-4xl lg:text-left font-bold">Bem-vindo, {name}!</h1>
+          <h1 className="text-2xl text-center sm:text-4xl lg:text-left font-bold">Bem-vindo, {name}!</h1>
           <p className="text-lg text-center lg:text-left ">Prepare-se para o quiz mágico ✨</p>
         </div>
 
