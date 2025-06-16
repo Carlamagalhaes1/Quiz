@@ -3,6 +3,7 @@ import { QuizCard } from "../components/QuizCard";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
+
 import correctIcon from "../assets/Felizzz.png";
 import wrongIcon from "../assets/Triste.png";
 
@@ -21,8 +22,7 @@ export default function Quiz() {
     }
   };
 
-  // Função que recebe se a resposta foi correta ou não
-  // Atualiza o estado para mostrar o ícone e soma pontos se correto
+
   const handleAnswerFeedback = (isCorrect: boolean | null) => {
     setIsAnswerCorrect(isCorrect);
     if (isCorrect) {
@@ -30,7 +30,7 @@ export default function Quiz() {
     }
   };
 
-  // Função para ser chamada quando o quiz acabar, navega para resultados passando nome e pontuação
+  
   const handleQuizEnd = () => {
     navigate("/results", { state: { score, playerName: name } });
   };
@@ -49,6 +49,7 @@ export default function Quiz() {
       >
         <ChevronLeft size={32} />
       </button>
+
 
       <div className=" z-10 max-w-6xl w-full mx-auto px-6 sm:px-12 md:mt-3">
         <div className="text-white mb-4">

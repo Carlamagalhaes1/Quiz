@@ -3,7 +3,7 @@ import { questions } from "../data/questions";
 
 type QuizCardProps = {
   onAnswerFeedback: (isCorrect: boolean | null) => void;
-  onQuizEnd: () => void;  // nova prop para avisar que o quiz acabou
+  onQuizEnd: () => void;  
 };
 
 export function QuizCard({ onAnswerFeedback, onQuizEnd }: QuizCardProps) {
@@ -34,7 +34,7 @@ export function QuizCard({ onAnswerFeedback, onQuizEnd }: QuizCardProps) {
     if (currentIndex < questions.length - 1) {
       setCurrentIndex((prev) => prev + 1);
     } else {
-      // Ao invés de navegar direto, chama onQuizEnd para o pai decidir
+     
       onQuizEnd();
     }
   };
