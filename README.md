@@ -16,7 +16,7 @@
 
 👉 [Clique aqui para acessar o Quiz HP](https://seu-link.vercel.app)
 
-> *(Substitua com seu link após subir na Vercel)*
+> 
 
 ---
 
@@ -41,7 +41,6 @@ Este projeto utiliza uma configuração moderna e robusta do `eslint` com suport
 - ✔️ Quiz interativo com múltiplas perguntas
 - ✔️ Feedback visual com Tailwind
 - ✔️ Estrutura escalável com TypeScript
-- ✔️ HMR com Vite
 - ✔️ Lint robusto com suporte a regras de tipo
 
 ---
@@ -61,8 +60,5 @@ Este projeto utiliza uma configuração moderna e robusta do `eslint` com suport
 Contribuições são super bem-vindas! Sinta-se à vontade para abrir issues, discutir ideias ou enviar pull requests.
 
 ---
-
-## 📄 Licença
-
-Este projeto está sob a licença **MIT**.  
+ 
 Criado com 💖 por [Carla Magalhães](https://github.com/Carlamagalhaes1)
