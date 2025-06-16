@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Alert from '../components/Alert';
+import Logo from "../assets/Logooo.png"
 
 export default function Home() {
   const [name, setName] = useState('');
@@ -36,7 +37,7 @@ export default function Home() {
         <Alert show={showAlert} message="Por favor, digite seu nome para começar!" />
 
         <motion.img
-          src={"public/images/Logooo.png"}
+          src={Logo}
           alt="Logo Harry Potter"
           className="w-40 mx-auto mb-6"
           initial={{ scale: 0 }}
