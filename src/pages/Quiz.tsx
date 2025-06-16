@@ -44,7 +44,7 @@ export default function Quiz() {
 
       <button
         onClick={handleBack}
-        className=" w-9 mt-10 ps-3  md:absolute top-7.5 left-6 z-20 text-white hover:text-yellow-300 transition"
+        className=" w-9 mt-12 ps-3  md:absolute top-7.5 left-6 z-20 text-white hover:text-yellow-300 transition"
       >
         <ChevronLeft size={32} />
       </button>
